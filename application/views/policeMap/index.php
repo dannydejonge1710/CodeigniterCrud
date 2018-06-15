@@ -1,6 +1,6 @@
 
 	<h3>Blog list</h3>
-	<a href="<? echo base_url('blog/add'); ?>" class="btn btn-primary">Add New</a>
+	<a href="<? echo base_url('police/add'); ?>" class="btn btn-primary">Add New</a>
 	<table class="table table-bordered table-responsive">
 		<thead>
 			<tr>
