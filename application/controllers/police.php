@@ -19,6 +19,26 @@ class Police extends CI_Controller{
 		$this->load->view('template/header');
 		$this->load->view('policeMap/add');
 		$this->load->view('template/footer');
+	}
 
+	public function submit(){
+		$result = $this->m->addPolice();
+		if($result) {
+			$this->session->set_flashdata('success_msg', 'Record added successfully');
+		}else{
+			$this->session->set_flashdata('error_msg', 'Failed to add record');
+		}
+		redirect(base_url('police/index'));
+	}
+
+	public function delete(){
+		$result = $this->m->deletePolice();
+		redirect(base_url('police/index'));
+	}
+
+	public function edit($id){
+		$this->load->view('template/header');
+		$this->load->view('policeMap/edit');
+		$this->load->view('template/footer');
 	}
 }
